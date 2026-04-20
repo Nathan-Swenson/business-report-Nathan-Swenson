@@ -1,0 +1,75 @@
+---
+title: "Presentation"
+format: revealjs
+---
+
+```{r}
+#| file: draft-results-code.R
+#| include: false
+```
+
+# Intro
+# Water Temperature
+## Proccess
+## Analysis
+## Graph
+```{r, echo = FALSE}
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(lubridate)
+
+
+ggplot(mtempm, aes(Year, Mean_Temp, color = Month)) + 
+  geom_line(aes(
+            group = Month,
+            color = Year > 2025)) +
+  geom_hline(yintercept = 85) +
+  geom_vline(xintercept = 2026) +
+  scale_color_manual(values = c("FALSE" = "#0072B2", "TRUE" = "#E69F00"),
+                     labels = c("Observed", "Projected")) +
+  scale_x_continuous(breaks = scales::pretty_breaks())+
+  theme (axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  facet_wrap(~Month) +
+  scale_y_continuous(limits = c(40, 90)) +
+  labs(
+    title = "Temperature over Years",
+    x = "Year",
+    y = "Temperature",
+    color = "Status")
+
+```
+# Energy Generation
+## Proccess
+## Analysis
+# Energy Consumption
+## Proccess
+## Analysis
+## Graph
+```{r, echo = FALSE}
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(lubridate)
+
+
+ggplot(mtempm, aes(Year, Mean_Temp, color = Month)) + 
+  geom_line(aes(
+            group = Month,
+            color = Year > 2025)) +
+  geom_hline(yintercept = 85) +
+  geom_vline(xintercept = 2026) +
+  scale_color_manual(values = c("FALSE" = "#0072B2", "TRUE" = "#E69F00"),
+                     labels = c("Observed", "Projected")) +
+  scale_x_continuous(breaks = scales::pretty_breaks())+
+  theme (axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  facet_wrap(~Month) +
+  scale_y_continuous(limits = c(40, 90)) +
+  labs(
+    title = "Temperature over Years",
+    x = "Year",
+    y = "Temperature",
+    color = "Status")
+
+```
+# Future Steps

@@ -1,5 +1,7 @@
-# Introduction
+---
+title: "Introduction"
+---
 
-This is a book created from markdown and executable code.
+Power plants can face operational constraints due to environmental conditions. These constraints can lead to not being able to meet power demands as well as running at lower efficiency levels. One of the most impactful constraints is cooling. A way this has been mitigated is by having a connected system to help compensate for local constraints of plants. This solution has been adopted by the Alabama Power Company, which operates 81 generating units and 26 facilities @generati.
 
-See @knuth84 for additional discussion of literate programming.
+It is unknown how often a power plant will have to run at a reduced capacity as well as the reduction requirements, while still being able to meet demands. The objective of this report is to assess the risk that the Dauphin Island power plant will have to run at reduced capacity as well as the total impact. This study analyzes the frequency of months that exceed 85F and the generation at different reduced-capacity scenarios. This study will also project the next 5 years. 

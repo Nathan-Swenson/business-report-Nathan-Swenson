@@ -1,0 +1,7 @@
+---
+title: "Conclusion"
+---
+
+This report analyzed the total impact of running at different levels of reduced capacity. We found what time periods of the year we would likely need to run at reduced capacity due to cooling constraints. The months that are at high risk, July and August, are months that will likely need to be run at reduced capacity of 10% over the next 5 years. Months with moderate risk, June and September, are recommended to be prepared to operate at reduced capacity. There were no instances of temperature requiring reduced capacity of 20%. Despite reduced capacity during elevated temperatures, the power plant is sufficient to meet demands. Under a scenario where reduced capacity is impactful, it can be offset due to the Alabama Power Company's load balancing.
+
+While the results indicate that reduced capacity is manageable under elevated temperatures and current demands, several limitations should be acknowledged and addressed for future analyses. Reproducing the power analysis for each of the given power plants would identify real contribution percentages for each power plant. Identifying trends in increasing demands to find if the impact increases.
