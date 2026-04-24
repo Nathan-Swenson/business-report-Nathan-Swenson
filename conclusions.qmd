@@ -1,7 +1,24 @@
 ---
-title: "Conclusion"
+title: "Discussion"
 ---
 
-This report analyzed the total impact of running at different levels of reduced capacity. We found what time periods of the year we would likely need to run at reduced capacity due to cooling constraints. The months that are at high risk, July and August, are months that will likely need to be run at reduced capacity of 10% over the next 5 years. Months with moderate risk, June and September, are recommended to be prepared to operate at reduced capacity. There were no instances of temperature requiring reduced capacity of 20%. Despite reduced capacity during elevated temperatures, the power plant is sufficient to meet demands. Under a scenario where reduced capacity is impactful, it can be offset due to the Alabama Power Company's load balancing.
+## Interpretation
 
-While the results indicate that reduced capacity is manageable under elevated temperatures and current demands, several limitations should be acknowledged and addressed for future analyses. Reproducing the power analysis for each of the given power plants would identify real contribution percentages for each power plant. Identifying trends in increasing demands to find if the impact increases.
+This report analyzed the total impact of running at different levels of reduced capacity within the Dauphin Island power plant. We found what time periods of the year we would likely need to run at reduced capacity due to cooling constraints. The months that are at high risk, July and August, are months that will likely need to be run at reduced capacity of 10% over the next 5 years. Months with moderate risk, June and September, are recommended to be prepared to operate at reduced capacity. There were no instances of temperature requiring reduced capacity of 20%. Despite reduced capacity during elevated temperatures, the power plant is sufficient to meet demands. Under a scenario where reduced capacity is impactful, it can be offset due to the Alabama Power Company's load balancing.
+
+## Limitations
+
+This study used public data from U.S. EIA and NOAA:
+-  The data on the generation from U.S. EIA were gathered from their EIA Beta to recieve the most up-to-date data. The data may have programming errors, but was found to not be substantial considering the support network.
+- This study only uses the generation data for the James M. Barry Electric Generating Plant. This study does not contain data on any other Alabama Power Company Power Plant.
+- There was no data for water temperature prior to 2002.
+
+## Replication
+
+While the results indicate that reduced capacity is manageable under elevated temperatures and current demands, several limitations should be acknowledged and addressed for future analyses. Reproducing the power analysis for each of the given power plants would identify real contribution percentages for each power plant. Gathering data on temperature trends would allow the company to stay informed on rising temperature patterns.
+
+::: callout-important
+1.  The company should run at reduced efficiency during the moderate risk and high risk months (June - September).
+
+2. To ensure security and adjust effectively, the company should conduct this analysis with information on the other power plants to be prepared for temperature rising.
+:::

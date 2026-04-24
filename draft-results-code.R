@@ -1,8 +1,6 @@
-#NOAA water temperature data from 2020-2024 Hurricane Sally prevented any data from 2021
 library(dplyr)
-library(tidyr)
-library(stringr)
 
+#NOAA water temperature data from 2020-2024 Hurricane Sally prevented any data from 2021
 wtemp<- rbind(
   read.csv("CSV/Temp/Temp2002.csv"), 
   read.csv("CSV/Temp/Temp2003.csv"),
@@ -78,6 +76,9 @@ econsumpnew<- rbind(
 egen<- read.csv("CSV/Barry_net_generation (1).csv", skip=4)
 
 #Cleaning
+library(dplyr)
+library(tidyr)
+library(stringr)
 
 econsumpnew<- setNames(econsumpnew, c("Year", "Month", "Num", "Name", "State", "Ownership", "Data_Status", "RR", "RS", "RC", "CR", "CS", "CC", "IR", "IS", "IC","TR", "TS", "TC", "TotalR", "TotalS", "TotalC"))
 econsumpold<- setNames(econsumpold, c("Num", "Name", "State", "Year", "Month", "Ownership", "Data_Status", "RC", "CR", "CS", "CC", "IR", "IS", "IC","TR", "TS", "TC","TotalR", "TotalS", "TotalC"))
@@ -126,28 +127,43 @@ contbybar<- consume_py
 contbybar$Consumed_Per_Year<- consume_py$Consumed_Per_Year * barcont
 mean(contbybar$Consumed_Per_Year)
 
-#Predicted wtemp
+#Projected Consump and Gen
 
 egen$consump<- Alco$TotalS* contbybar$Consumed_Per_Year
 
-egen$Year<- as.numeric(egen$Year)
-egen$Month<- factor(egen$Month)
+egen$Year<- as.numeric(Alco$Year)
+egen$Month<- factor(Alco$Month,
+                    levels = month.abb)
 
-cmodel<- lm(consump ~ Year * Month, data=egen)
+cmodel<- lm(consump ~ Year * Month, data = egen)
+
+fAlco<- expand.grid(
+  Year = seq(max(egen$Year) + 1,
+             max(egen$Year) + 5),
+  Month = levels(egen$Month)
+)
+
+fAlco$consump<- predict(cmodel, newdata = fAlco)
+
+emodel<- lm(`Normal Capacity` ~ Year * Month, data = egen)
 
 fegen<- expand.grid(
-  Year = seq(max(egen$Year) + 1, max(egen$Year) + 5),
-  Month = levels(egen$Month))
+  Year = seq(max(egen$Year) + 1,
+             max(egen$Year) + 5),
+  Month = levels(egen$Month)
+)
 
-fegen$consump<- predict(cmodel, newdata = fegen)
+fAlco$`Normal Capacity`<- predict(emodel, newdata = fegen)
 
-gmodel<- lm(`Normal Capacity` ~ Year * Month, data=egen)
 
-fegen$`Normal Capacity`<- predict(gmodel, newdata = fegen)
 
-egen<- rbind(egen, fegen)
+egen<- rbind(
+  egen,
+  fAlco
+)
 
-#reduce cap
+#Reduced cap
+
 egen$`10% Reduced Capacity`<- egen$`Normal Capacity`*.9
 egen$`20% Reduced Capacity`<- egen$`Normal Capacity`*.8
 egen$`30% Reduced Capacity`<- egen$`Normal Capacity`*.7
@@ -222,19 +238,25 @@ cinfw<- cinfw |> summarise(
   ConfInt_High = mean(Water.Temp...F.) + 1.96 * (sd(Water.Temp...F.)/sqrt(length(Water.Temp...F.)))
 )
 
-#Predicted wtemp
+#Projected temps
 
 mtempm$Year<- as.numeric(mtempm$Year)
 mtempm$Month<- factor(month.name[as.numeric(mtempm$Month)],
                       levels = month.name)
 
-tmodel<- lm(Mean_Temp ~ Year * Month, data=mtempm)
+tmodel<- lm(Mean_Temp ~ Year * Month, data = mtempm)
 
 fwtemp<- expand.grid(
-  Year = seq(max(mtempm$Year) + 1, max(mtempm$Year) + 5),
-  Month = levels(mtempm$Month))
+  Year = seq(max(mtempm$Year) + 1,
+             max(mtempm$Year) + 5),
+  Month = levels(mtempm$Month)
+)
 
 fwtemp$Mean_Temp<- predict(tmodel, newdata = fwtemp)
 
-mtempm<- rbind(mtempm, fwtemp)
 
+
+mtempm<- rbind(
+  mtempm,
+  fwtemp
+)

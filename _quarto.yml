@@ -9,14 +9,13 @@ book:
     left: "Copyright 2025, Nathan Swenson"
   chapters:
     - index.qmd
-    - exec-summary.qmd
     - intro.qmd
-    - data-doc.qmd
     - methods.qmd
     - results.qmd
     - conclusions.qmd
     - references.qmd
-
+  appendices:
+    - data-doc.qmd
 
 bibliography: references.bib
 

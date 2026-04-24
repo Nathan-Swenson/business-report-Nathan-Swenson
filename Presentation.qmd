@@ -8,11 +8,30 @@ format: revealjs
 #| include: false
 ```
 
-# Intro
-# Water Temperature
-## Proccess
-## Analysis
-## Graph
+# Business Problem
+
+::: {.incremental}
+::: {.fragment}
+
+:::
+:::
+
+## Context
+## Goal
+# Data Overview
+
+::: {.incremental}
+
+:::
+
+# Methodology
+## Approach 1
+## Approach 2
+# Key Analysis
+## Finding 1
+
+---
+
 ```{r, echo = FALSE}
 library(ggplot2)
 library(dplyr)
@@ -39,13 +58,13 @@ ggplot(mtempm, aes(Year, Mean_Temp, color = Month)) +
     color = "Status")
 
 ```
-# Energy Generation
-## Proccess
-## Analysis
-# Energy Consumption
-## Proccess
-## Analysis
-## Graph
+
+---
+
+## Finding 2
+
+---
+
 ```{r, echo = FALSE}
 library(ggplot2)
 library(dplyr)
@@ -72,4 +91,8 @@ ggplot(mtempm, aes(Year, Mean_Temp, color = Month)) +
     color = "Status")
 
 ```
-# Future Steps
+
+---
+
+# Interpretation
+# Recommendations
