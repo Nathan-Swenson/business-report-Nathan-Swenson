@@ -1,11 +1,11 @@
 ---
-title: "Presentation"
+title: "Evaluation of Water Temperature"
 format: 
   revealjs:
     embed-resources: true
 ---
 
-```{r}
+```{r, include=FALSE}
 library(dplyr)
 
 #NOAA water temperature data from 2020-2024 Hurricane Sally prevented any data from 2021
