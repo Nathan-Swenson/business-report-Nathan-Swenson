@@ -5,7 +5,9 @@ format:
     embed-resources: true
 ---
 
-```{r, include=FALSE}
+```{r}
+#| include: false
+
 library(dplyr)
 
 #NOAA water temperature data from 2020-2024 Hurricane Sally prevented any data from 2021
