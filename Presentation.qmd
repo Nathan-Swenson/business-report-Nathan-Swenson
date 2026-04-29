@@ -76,8 +76,8 @@ Peak month temperatures:
 :::
 
 ::: {.fragment fragment-index="2"}
--   July *86.62°F (95% CI: 86.57-86.68)*\
--   August *86.35°F* *(95% CI: 86.31-86.38)*
+-   July **86.62°F (95% CI: 86.57-86.68)**\
+-   August **86.35°F (95% CI: 86.31-86.38)**
 :::
 
 ::: {.fragment fragment-index="3"}
@@ -85,8 +85,8 @@ High Risk months:
 :::
 
 ::: {.fragment fragment-index="4"}
--   July *(72.7%)*\
--   August *(73.6%)*
+-   July **(72.7%)**\
+-   August **(73.6%)**
 :::
 
 ::: {.fragment fragment-index="5"}
@@ -94,8 +94,8 @@ Moderate Risk months:
 :::
 
 ::: {.fragment fragment-index="6"}
--   June *(45.5%)*
--   September *(32%)*
+-   June **(45.5%)**
+-   September **(32%)**
 :::
 
 ------------------------------------------------------------------------
@@ -132,11 +132,11 @@ ggplot(mtempm, aes(Year, Mean_Temp, color = Month)) +
 ## Energy Findings
 
 ::: {.fragment fragment-index="1"}
-Defined Contribution: *10.3%*
+Defined Contribution: **10.3%**
 :::
 
 ::: {.fragment fragment-index="2"}
-Most impacted month: September of 2004 (Normal Capacity = 35.31%, 30% reduced capacity = 50.44%)
+Most impacted month: September of 2004 (Normal Capacity = **35.31%**, 30% reduced capacity = **50.44%**)
 :::
 
 ------------------------------------------------------------------------

@@ -5,8 +5,9 @@ format: html
 
 # Title
 Hi I am Nathan and today I will be looking at the evaluation of water temperature
+
 # Business Problem
-Power Plants are a pivotal part in how we function in our daily lives. They power our lights, air conditioners, appliances and so on. However power plants can face environment constants that lead to lower efficiency thus creating a failure to meet demand.
+Power Plants are a pivotal part in how we function in our soceity. They power our lights, air conditioners, appliances and so on. However power plants can face environment constants that lead to lower efficiency thus creating a failure to meet demand.
 
 One of the biggest factors is cooling in where they need a heat sink to avoid overheating, which with rising temperatures it will be more likely to face these restraints.
 
@@ -32,7 +33,7 @@ From the Energy Information Administration's Form-861 (The Monthly Electric Powe
 
 # Methodology
 
-When evaluating this I had decided to run 2 seperate analyses.
+When evaluating this I had decided to run 2 seperate approaches.
 
 # Water Temp
 
@@ -79,7 +80,7 @@ When plotting this graph I had faceted by reduction capcity, while using opaquen
 
 As you can see from the graph the power plant was very capable at meeting demands across the board as well as the projected next 5 years. We can see that theere are peaks during these years, these peaks represent summer months.
 # Interpretation
-From the water temperature analysis we can determine that high risk months will likely need to be ran at reduced capacity, and as extra security run moderate risk months at reduced capacity as well.
+In conclusion we had looked over likliehood as well as impact of running at reduced capcity and had found that from the water temperature analysis we can determine that high risk months will likely need to be ran at reduced capacity, and as extra security run moderate risk months at reduced capacity as well.
 
 We have determined from the energy analysis that we can afford to run at reduced capacity of as high as 30% capacity in a majority of cases.
 
