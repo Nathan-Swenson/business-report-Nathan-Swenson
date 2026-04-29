@@ -1,0 +1,105 @@
+---
+title: "Presentation_Script"
+format: html
+---
+
+# Title
+Hi I am Nathan and today I will be looking at the evaluation of water temperature
+# Business Problem
+Power Plants are a pivotal part in how we function in our daily lives. They power our lights, air conditioners, appliances and so on. However power plants can face environment constants that lead to lower efficiency thus creating a failure to meet demand.
+
+One of the biggest factors is cooling in where they need a heat sink to avoid overheating, which with rising temperatures it will be more likely to face these restraints.
+
+# Context
+So what is the point in where cooling is needed, today we have identified that 85 F is the threshold for when operational risk is identified
+
+# Goals
+In this evaluation I Assessed the likelihood of reduced capacity 
+
+Evaluated the impact of running at reduced capacity
+
+And projected a rough estimate over the next 5 years for trends, (not accounted for variability)
+
+# Data Overview
+
+I had gathered 3 seperate datasets for this report, all covering the years from January of 2002 to December of 2025
+
+From the National Oceanic and Atmospheric Administration I had gathered hourly water temperature data from a buoy at the dauphin Island station
+
+From Energy Information Administration's data browser I had gathered generation data from the James M. Barry Electric Generating Plant. We had used this power plant for refrence because it was one of the larger contributors to the Alabama Power Company, which is the major supplier of energy to Dauphin Island Alabama. This data had gathered the net generation that the power plant was able to produce. This data was in Megawatt hours because it gathers it is based on how much energy was generated in a given month rather than how much it can produce.
+
+From the Energy Information Administration's Form-861 (The Monthly Electric Power Industry Report) I was able to gather energy consumed by Alabama Power Company. This dataset covers the energy consumed by those supplied by Alabama Power Company in a given month.
+
+# Methodology
+
+When evaluating this I had decided to run 2 seperate analyses.
+
+# Water Temp
+
+For water temperature it was found that monthly averages would be useful to find which months contain average temperatures above the threshold of 85 F, This was done using the NOAA water temperature data to find confidence intervals at 95% confidence interval of average water temperature. 
+
+We then wanted to find which months have the highest proportion of exceeding temperatures. We labeled months with three levels of risk High (>50%) Moderate (50>x>20) Low (<20). 
+
+Finally we used linear regression models for temperature predictions in where we had used temperature and the time of year
+# Energy Gen & Consump
+
+We then wanted to find how impactful running at reduced capacity was. To do this we had compared the energy generation and energy consumption.
+
+We had calculated the average contribution to assign how much power the plant needs to generate to meet demand. We then compared the proportion of the generation was used for the demand.
+
+Finally we had replicated this proportion under scenarios where the plant would be running at different levels of reduced capacity. 
+- We had 3 different levels 10%, which would be required at 85 F
+- 20%, which would be required at 95 F
+- and Finally 30% which would be required at 105 F
+These reduced capacity levels were not actually met with the given temperature of the year as to show a consistent impact of reduced capacity.
+
+
+# Water Temp Findings
+
+We had found that there were 2 months that had passed the operational risk threshold of 85 F. July had a lower bound of 86.57F and an upper bound of 86.68F with the highest likeliehood of around 86.62. August was found to also pass the threshold of 85 F where it was around .20 F units less than July
+
+When finding high risk months it was found that despite July having higher peak temperatures, August had a higher proportion of temperatures greater than 85F. July was identified to have a proportion of 72.7% and August had a proportion of 73.6%
+
+There were 2 months that were identified as having moderate risk. June was found to have a proportion of 45.5% and Septemeber had a proportion of 32%.
+# Water Graph
+
+For this graph I had faceted by month to identify month trends having temperature over the years. An interesting trend is that high and moderate risk months more straddle the threshold line of 85, showing they are more consistently having temperates around the threshold.
+
+# Energy Findings
+
+When calculating the power plants distribut we had found it to be about 10.3% of Alabama Power Company's max production, where Alabama Power Company uses around 40% of its generation towards consumption.
+
+When comparing months we had found that the power plant was very capable of handling the demand.
+
+When applying the levels of reduced capacity the most impacted months September of 2004 that had went from 35.31% to 50.44% of net generation used towards demand
+
+# Energy Graph
+
+When plotting this graph I had faceted by reduction capcity, while using opaqueness to represent the proportion used (with a positive relationship)
+
+As you can see from the graph the power plant was very capable at meeting demands across the board as well as the projected next 5 years. We can see that theere are peaks during these years, these peaks represent summer months.
+# Interpretation
+From the water temperature analysis we can determine that high risk months will likely need to be ran at reduced capacity, and as extra security run moderate risk months at reduced capacity as well.
+
+We have determined from the energy analysis that we can afford to run at reduced capacity of as high as 30% capacity in a majority of cases.
+
+If generation falls or consumption increases dramatically there is less overall impact as there is the Alabama Power Company's facilities acting as a support system where it can lean on another plant.
+
+
+# Limitations
+
+While exploring the water temperature data there were multiple instances of missing months, this was attempted to be offset by increasing scope of temperature data. Would be beneficial to connect missing data for future analyses
+
+During the energy analysis it was chosen to use James M. Barry Electric Generating plant as it has a high contribution percentage, but the EIA's data browser only contained 4 of the 28 power plant facilities under the Alabama Power Company. For future analyses it would beneficial to use this as a scope for Alabama Power Company's true demand rates.
+
+Finally the EIA data browser is updated live, so it is more prone to programming errors, there were not any identified within this paper, but for future analysis it would be beneficial to background check.
+
+# Recommendations
+
+I recommend that you operate at reduced capacity during the identified moderate and high risk months (June through Spetember) to avoid operational risk
+
+To widden the scope of impact expand the analysis to include all power 28 power plants under Alabama Power Company
+
+Finally monitor increasing temperature and energy demand to identify trends.
+
+# Questions
